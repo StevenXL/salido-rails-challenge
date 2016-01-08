@@ -1,0 +1,57 @@
+<%= form_for @wine  do |f| %>
+  <% if @wine.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+
+        <ul>
+        <% @wine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Max Price" %>
+    <%= f.text_field :price_max, class: "form-control", type: "number"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Min Price" %>
+    <%= f.text_field :price_min, class: "form-control", type: "number"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Retail Price" %>
+    <%= f.text_field :price_retail, class: "form-control", type: "number"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Retail Price" %>
+    <%= f.text_field :price_retail, class: "form-control", type: "number"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Select Varietal" %>
+    <%= select_tag "varietal", options_from_collection_for_select(@varietals, "id", "name"), include_blank: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Select Vineyard" %>
+    <%= select_tag "vineyard", options_from_collection_for_select(@vineyards, "id", "name"), include_blank: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Select Appellation" %>
+    <%= select_tag "appellation", options_from_collection_for_select(@appellations, "id", "name"), include_blank: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>
