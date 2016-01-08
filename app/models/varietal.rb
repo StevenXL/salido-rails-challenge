@@ -1,7 +1,7 @@
 class Varietal < ActiveRecord::Base
   validates :name, presence: true
-  validates :winetype, presence: true
+  validates :wine_type, presence: true
 
-  belongs_to :winetype
+  belongs_to :wine_type
   has_many :wines
 end
