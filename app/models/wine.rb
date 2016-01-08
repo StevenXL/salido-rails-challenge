@@ -5,7 +5,8 @@ class Wine < ActiveRecord::Base
   validates :price_retail, presence: true
   validates :year, presence: true
 
-  has_many :traits, through: :winetrait
+  has_many :winetraits, class_name: "WineTrait"
+  has_many :traits, through: :winetraits
   belongs_to :appellation
   belongs_to :varietal
   belongs_to :vineyard
