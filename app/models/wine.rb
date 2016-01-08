@@ -3,7 +3,6 @@ class Wine < ActiveRecord::Base
   validates :price_min, presence: true
   validates :price_max, presence: true
   validates :price_retail, presence: true
-  validates :year, presence: true
 
   has_many :winetraits, class_name: "WineTrait"
   has_many :traits, through: :winetraits
