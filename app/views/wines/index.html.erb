@@ -1,6 +1,6 @@
 <h1 class="text-center">Wine List</h1>
 
-<table class="table table-striped">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -9,7 +9,7 @@
       <th>Vineyard</th>
     </tr>
   </thead>
-  <tbody class="table-hover">
+  <tbody>
 
     <% @wines.each do |wine| %>
       <%= render wine %>
