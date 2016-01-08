@@ -69,16 +69,16 @@ ActiveRecord::Schema.define(version: 20160108185708) do
   end
 
   create_table "wines", force: :cascade do |t|
-    t.string   "name",                         null: false
-    t.decimal  "price_min",      precision: 2, null: false
-    t.decimal  "price_max",      precision: 2, null: false
-    t.decimal  "price_retail",   precision: 2, null: false
+    t.string   "name",           null: false
+    t.decimal  "price_min",      null: false
+    t.decimal  "price_max",      null: false
+    t.decimal  "price_retail",   null: false
     t.string   "year"
     t.integer  "appellation_id"
     t.integer  "varietal_id"
     t.integer  "vineyard_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "wines", ["appellation_id"], name: "index_wines_on_appellation_id", using: :btree
