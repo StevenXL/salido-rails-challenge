@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160108185708) do
   enable_extension "plpgsql"
 
   create_table "appellations", force: :cascade do |t|
+    t.string   "name",       null: false
     t.integer  "region_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
