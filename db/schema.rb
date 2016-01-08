@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108183353) do
+ActiveRecord::Schema.define(version: 20160108184515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20160108183353) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "traits", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "varietals", force: :cascade do |t|
     t.string   "name",         null: false
     t.integer  "wine_type_id", null: false
@@ -38,6 +44,12 @@ ActiveRecord::Schema.define(version: 20160108183353) do
   end
 
   add_index "varietals", ["wine_type_id"], name: "index_varietals_on_wine_type_id", using: :btree
+
+  create_table "vineyards", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "wine_types", force: :cascade do |t|
     t.string   "name",       null: false
