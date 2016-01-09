@@ -19,16 +19,20 @@ class WinesController < ApplicationController
     @wine = Wine.new(wine_params)
 
     if @wine.save
+      flash[:success] = "Wine successfully created."
       redirect_to @wine
     else
+      flash[:danger] = "Wine not created."
       render :new
     end
   end
 
   def update
     if @wine.update_attributes(wine_params)
+      flash[:success] = "Wine successfully updated."
       redirect_to @wine
     else
+      flash[:danger] = "Wine was not updated."
       render :edit
     end
   end
