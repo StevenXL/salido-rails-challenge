@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:show, :edit]
+  before_action :set_wine, only: [:show, :edit, :update]
 
   def index
     @wines = Wine.all
@@ -22,6 +22,14 @@ class WinesController < ApplicationController
       redirect_to @wine
     else
       render :new
+    end
+  end
+
+  def update
+    if @wine.update_attributes(wine_params)
+      redirect_to @wine
+    else
+      render :edit
     end
   end
 
