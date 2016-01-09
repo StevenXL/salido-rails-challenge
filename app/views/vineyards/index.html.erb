@@ -1,0 +1,19 @@
+<h1>Viewing Vineyards</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Wine Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @vineyards.each do |vineyard| %>
+      <%= render vineyard %>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to "Create Vineyard", new_vineyard_path %>
