@@ -1,0 +1,19 @@
+<h1 class="text-center">Appellations List</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Wine Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @appellations.each do |appellations| %>
+      <%= render appellations %>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to "Create Appellation", new_appellation_path %>
