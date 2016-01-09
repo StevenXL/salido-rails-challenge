@@ -33,17 +33,17 @@
 
   <div class="form-group">
     <%= f.label "Select Varietal" %>
-    <%= select_tag "wine[varietal_id]", options_from_collection_for_select(@varietals, "id", "name"), include_blank: true, class: "form-control" %>
-  </div>
+    <%= f.select :varietal_id, Varietal.all.collect {|v| [v.name, v.id]}, {include_blank: true}, class: "form-control" %>
+   </div>
 
   <div class="form-group">
     <%= f.label "Select Vineyard" %>
-    <%= select_tag "wine[vineyard_id]", options_from_collection_for_select(@vineyards, "id", "name"), include_blank: true, class: "form-control" %>
+    <%= f.select :vineyard_id, Vineyard.all.collect {|v| [v.name, v.id]}, {include_blank: true}, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label "Select Appellation" %>
-    <%= select_tag "wine[appellation_id]", options_from_collection_for_select(@appellations, "id", "name"), include_blank: true, class: "form-control" %>
+    <%= f.select :appellation_id, Appellation.all.collect {|a| [a.name, a.id]}, {include_blank: true}, class: "form-control" %>
   </div>
 
   <div class="form-group">

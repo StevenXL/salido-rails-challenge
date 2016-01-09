@@ -1,12 +1,14 @@
 class WinesController < ApplicationController
-  before_action :set_dependents, only: [:new, :create]
+  before_action :set_wine, only: [:show, :edit]
 
   def index
     @wines = Wine.all
   end
 
   def show
-    @wine = Wine.find_by(id: params[:id])
+  end
+
+  def edit
   end
 
   def new
@@ -24,10 +26,9 @@ class WinesController < ApplicationController
   end
 
   private
-  def set_dependents
-    @varietals = Varietal.all
-    @vineyards = Vineyard.all
-    @appellations = Appellation.all
+
+  def set_wine
+    @wine = Wine.find_by(id: params[:id])
   end
 
   def wine_params
