@@ -18,37 +18,32 @@
 
   <div class="form-group">
     <%= f.label "Max Price" %>
-    <%= f.text_field :price_max, class: "form-control", type: "number"%>
+    <%= f.text_field :price_max, class: "form-control", type: "number", step: "0.01"%>
   </div>
 
   <div class="form-group">
     <%= f.label "Min Price" %>
-    <%= f.text_field :price_min, class: "form-control", type: "number"%>
+    <%= f.text_field :price_min, class: "form-control", type: "number", step: "0.01"%>
   </div>
 
   <div class="form-group">
     <%= f.label "Retail Price" %>
-    <%= f.text_field :price_retail, class: "form-control", type: "number"%>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Retail Price" %>
-    <%= f.text_field :price_retail, class: "form-control", type: "number"%>
+    <%= f.text_field :price_retail, class: "form-control", type: "number", step: "0.01"%>
   </div>
 
   <div class="form-group">
     <%= f.label "Select Varietal" %>
-    <%= select_tag "varietal", options_from_collection_for_select(@varietals, "id", "name"), include_blank: true, class: "form-control" %>
+    <%= select_tag "wine[varietal_id]", options_from_collection_for_select(@varietals, "id", "name"), include_blank: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label "Select Vineyard" %>
-    <%= select_tag "vineyard", options_from_collection_for_select(@vineyards, "id", "name"), include_blank: true, class: "form-control" %>
+    <%= select_tag "wine[vineyard_id]", options_from_collection_for_select(@vineyards, "id", "name"), include_blank: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label "Select Appellation" %>
-    <%= select_tag "appellation", options_from_collection_for_select(@appellations, "id", "name"), include_blank: true, class: "form-control" %>
+    <%= select_tag "wine[appellation_id]", options_from_collection_for_select(@appellations, "id", "name"), include_blank: true, class: "form-control" %>
   </div>
 
   <div class="form-group">
