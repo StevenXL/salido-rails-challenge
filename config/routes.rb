@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :appellations, except: [:update, :edit]
   resources :vineyards, except: [:update, :edit]
   resources :varietals, except: [:update, :edit]
+  resources :wine_types, except: [:update, :edit]
 end

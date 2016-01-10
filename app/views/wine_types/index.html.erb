@@ -1,0 +1,19 @@
+<h1>Viewing Wine Types</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Varietal Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @wine_types.each do |wine_type| %>
+      <%= render wine_type %>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to "Create Wine Type", new_wine_type_path %>
