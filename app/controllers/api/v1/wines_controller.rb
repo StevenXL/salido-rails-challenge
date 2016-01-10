@@ -41,7 +41,6 @@ class Api::V1::WinesController < Api::ApiController
   def destroy
     if @wine
       @wine.destroy
-
       render status: 200, json: {message: "Wine successfully deleted"}
     else
       render status: 404, json: {status: "Not Found",
