@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :wines, except: [:new, :edit]
+    end
+  end
+
   resources :wines
 
   # Necessary to be able to create Models associated with Wine
