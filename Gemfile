@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass'
 gem 'rspec-rails'
 gem 'httparty'
+gem 'active_model_serializers'
 
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
