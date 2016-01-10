@@ -16,7 +16,7 @@ class WinesController < ApplicationController
   end
 
   def create
-    @wine = Wine.new(wine_params)
+    @wine = Wine.find_or_initialize_by(wine_params)
 
     if @wine.save
       flash[:success] = "Wine successfully created."
@@ -44,7 +44,15 @@ class WinesController < ApplicationController
   end
 
   def wine_params
-    params.require(:wine).permit(:name, :price_max, :price_retail, :price_min,
-                                 :varietal_id, :vineyard_id, :appellation_id)
+    clean_inputs = params.require(:wine).permit(:name, :price_max,
+                                                :price_retail,
+                                                :price_min,:varietal_id,
+                                                :vineyard_id, :appellation_id)
+
+    titlecase_name(clean_inputs)
+  end
+
+  def titlecase_name(hash)
+    hash.merge(name: hash[:name].titlecase)
   end
 end
