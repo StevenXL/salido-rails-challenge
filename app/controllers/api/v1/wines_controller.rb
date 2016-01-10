@@ -1,5 +1,4 @@
-class Api::V1::WinesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+class Api::V1::WinesController < Api::ApiController
   before_action :set_wine, except: [:index, :create]
 
   def index
