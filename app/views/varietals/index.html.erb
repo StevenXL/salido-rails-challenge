@@ -1,0 +1,19 @@
+<h1 class="text-center">Varietal List</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Wine Count</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @varietals.each do |varietal| %>
+      <%= render varietal %>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to "Create Varietal", new_varietal_path %>

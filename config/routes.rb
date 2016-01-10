@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :regions, except: [:update, :edit]
   resources :appellations, except: [:update, :edit]
   resources :vineyards, except: [:update, :edit]
+  resources :varietals, except: [:update, :edit]
 end
