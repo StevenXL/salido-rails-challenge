@@ -9,16 +9,4 @@ class Wine < ActiveRecord::Base
   belongs_to :appellation
   belongs_to :varietal
   belongs_to :vineyard
-
-  def as_json(options = {})
-    super(except: [:created_at,
-                   :updated_at,
-                   :varietal_id,
-                   :vineyard_id,
-                   :appellation_id],
-          include: [:varietal,
-                    :vineyard,
-                    :appellation,
-                    :traits])
-  end
 end
