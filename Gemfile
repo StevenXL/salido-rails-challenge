@@ -20,6 +20,11 @@ group :development, :test do
   gem 'byebug'
 end
 
+group :test do
+  gem 'faker'
+  gem 'database_cleaner'
+end
+
 group :development do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
