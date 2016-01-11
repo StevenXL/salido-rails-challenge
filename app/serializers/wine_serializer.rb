@@ -4,4 +4,16 @@ class WineSerializer < ActiveModel::Serializer
   has_one :appellation
   has_one :varietal
   has_one :vineyard
+
+  def price_min
+    object.price_min.to_f
+  end
+
+  def price_max
+    object.price_max.to_f
+  end
+
+  def price_retail
+    object.price_retail.to_f
+  end
 end
