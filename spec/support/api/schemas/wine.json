@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "required": ["id", "name", "price_min", "price_max", "price_retail", "year",
+               "traits", "appellation", "varietal", "vineyard"],
+  "properties": {
+    "id" : {
+      "type" : "integer"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "price_min" : {
+      "type" : "number"
+    },
+    "price_max" : {
+      "type" : "number"
+    },
+    "price_retail" : {
+      "type" : "number"
+    },
+    "year" : {
+      "type" : "null"
+    },
+    "traits" : {
+      "type" : "array"
+    },
+    "appellation" : {
+      "type" : "object"
+    },
+    "vineyard" : {
+      "type" : "object"
+    },
+    "varietal" : {
+      "type" : "object"
+    }
+  }
+}
